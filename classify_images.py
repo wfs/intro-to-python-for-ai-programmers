@@ -12,8 +12,8 @@
 #            -The Image Folder as image_dir within classify_images and function 
 #             and as in_arg.dir for function call within main. 
 #            -The results dictionary as results_dic within classify_images 
-#             function and results for the functin call within main.
-#            -The CNN model architecture as model wihtin classify_images function
+#             function and results for the function call within main.
+#            -The CNN model architecture as model within classify_images function
 #             and in_arg.arch for the function call within main. 
 #           This function uses the extend function to add items to the list 
 #           that's the 'value' of the results dictionary. You will be adding the
@@ -22,7 +22,8 @@
 #
 ##
 # Imports classifier function for using CNN to classify images 
-from classifier import classifier 
+from classifier import classifier
+
 
 # TODO 3: EDIT and ADD code BELOW to do the following that's stated in the 
 #       comments below that start with "TODO: 3" for the classify_images function 
@@ -60,7 +61,7 @@ def classify_images(images_dir, results_dic, model):
                 --- where index 1 & index 2 are added by this function ---
                   NEW - index 1 = classifier label (string)
                   NEW - index 2 = 1/0 (int)  where 1 = match between pet image
-                    and classifer labels and 0 = no match between labels
+                    and classifier labels and 0 = no match between labels
       model - Indicates which CNN model architecture will be used by the 
               classifier function to classify the pet images,
               values must be either: resnet alexnet vgg (string)
@@ -71,51 +72,51 @@ def classify_images(images_dir, results_dic, model):
     # that indicates the folder and the filename (key) to be used in the 
     # classifier function
     for key in results_dic:
-       
-       # TODO: 3a. Set the string variable model_label to be the string that's 
-       #           returned from using the classifier function instead of the   
-       #           empty string below.
-       #
-       #  Runs classifier function to classify the images classifier function 
-       # inputs: path + filename  and  model, returns model_label 
-       # as classifier label
-       model_label = classifier(images_dir+key, model)
 
-       # TODO: 3b. BELOW REPLACE pass with CODE to process the model_label to 
-       #           convert all characters within model_label to lowercase 
-       #           letters and then remove whitespace characters from the ends
-       #           of model_label. Be certain the resulting processed string 
-       #           is named model_label.
-       #
-       # Processes the results so they can be compared with pet image labels
-       # set labels to lowercase (lower) and stripping off whitespace(strip)
-       #pass
-       model_label = model_label.lower().strip()
-              
-       # defines truth as pet image label 
-       truth = results_dic[key][0]
+        # TODO: 3a. Set the string variable model_label to be the string that's
+        #           returned from using the classifier function instead of the
+        #           empty string below.
+        #
+        #  Runs classifier function to classify the images classifier function
+        # inputs: path + filename  and  model, returns model_label
+        # as classifier label
+        model_label = classifier(images_dir + key, model)
 
-       # TODO: 3c. REPLACE pass BELOW with CODE that uses the extend list function
-       #           to add the classifier label (model_label) and the value of
-       #           1 (where the value of 1 indicates a match between pet image 
-       #           label and the classifier label) to the results_dic dictionary
-       #           for the key indicated by the variable key 
-       #
-       # If the pet image label is found within the classifier label list of terms 
-       # as an exact match to on of the terms in the list - then they are added to 
-       # results_dic as an exact match(1) using extend list function
-       if truth in model_label:
-           #pass
-	   results_dic[key].extend([truth,1])
+        # TODO: 3b. BELOW REPLACE pass with CODE to process the model_label to
+        #           convert all characters within model_label to lowercase
+        #           letters and then remove whitespace characters from the ends
+        #           of model_label. Be certain the resulting processed string
+        #           is named model_label.
+        #
+        # Processes the results so they can be compared with pet image labels
+        # set labels to lowercase (lower) and stripping off whitespace(strip)
+        # pass
+        model_label = model_label.lower().strip()
 
-       # TODO: 3d. REPLACE pass BELOW with CODE that uses the extend list function
-       #           to add the classifier label (model_label) and the value of
-       #           0 (where the value of 0 indicates NOT a match between the pet 
-       #           image label and the classifier label) to the results_dic 
-       #           dictionary for the key indicated by the variable key
-       #                   
-       # if not found then added to results dictionary as NOT a match(0) using
-       # the extend function 
-       else:
-           #pass
-	   results_dic[key].extend([truth,0])
+        # defines truth as pet image label
+        truth = results_dic[key][0]
+
+        # TODO: 3c. REPLACE pass BELOW with CODE that uses the extend list function
+        #           to add the classifier label (model_label) and the value of
+        #           1 (where the value of 1 indicates a match between pet image
+        #           label and the classifier label) to the results_dic dictionary
+        #           for the key indicated by the variable key
+        #
+        # If the pet image label is found within the classifier label list of terms
+        # as an exact match to on of the terms in the list - then they are added to
+        # results_dic as an exact match(1) using extend list function
+        if truth in model_label:
+            # pass
+            results_dic[key].extend([truth, 1])
+
+        # TODO: 3d. REPLACE pass BELOW with CODE that uses the extend list function
+        #           to add the classifier label (model_label) and the value of
+        #           0 (where the value of 0 indicates NOT a match between the pet
+        #           image label and the classifier label) to the results_dic
+        #           dictionary for the key indicated by the variable key
+        #
+        # if not found then added to results dictionary as NOT a match(0) using
+        # the extend function
+        else:
+            # pass
+            results_dic[key].extend([truth, 0])
