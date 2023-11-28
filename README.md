@@ -2,7 +2,32 @@
 ## File relationship diagram
 <img src="python_files_uml_diagram.png">
 
+## Local setup
+### Virtual python environment
+```shell
+ $ mkdir project_id_dog_breed_python_venv
+ $ python3 -m venv project_id_dog_breed_python_venv/
+ $ source project_id_dog_breed_python_venv/bin/activate
+ # TIP: "(project_id_dog_breed_python_venv) deactivate" when finished using that python environment.
+```
+
+### Required python packages to install in project_id_dog_breed_python_venv
+```shell
+(project_id_dog_breed_python_venv) python -m pip install Pillow
+(project_id_dog_breed_python_venv) python -m pip install torchvision
+```
+## Script running
+```shell
+# To compare 3 x models against 40 images test set.
+(project_id_dog_breed_python_venv) ./run_models_batch.sh
+# To compare 3 x models against 4 own images test set.
+(project_id_dog_breed_python_venv) ./run_models_batch_uploaded.sh
+```
+
 ## Questions regarding Uploaded Image Classification:
+| Dog_01.jpg | Dog_02.jpg | Fish_01.jpg | Glass_01.jpg |
+| :-: | :-: | :-: | :-: |
+|<img src="./uploaded_images/Dog_01.jpg" width="100" height="100">|<img src="./uploaded_images/Dog_02.jpg" width="100" height="100">|<img src="./uploaded_images/Fish_01.jpg" width="100" height="100">|<img src="./uploaded_images/Glass_01.jpg" width="100" height="100">|
 
 1. **_Did the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed? If not, report the differences in the classifications._**
 - Answer: Yes, the three model architectures (alexnet, resnet and vgg) correctly classified the breed of dog in Dog_01.jpg as "dog" (aka last list item in "dognames.txt").
