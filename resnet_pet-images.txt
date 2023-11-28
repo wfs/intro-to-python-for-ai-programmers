@@ -1,3 +1,4 @@
+1. start_time: 1701152769
 Command Line Arguments:
      dir = pet_images/ 
     arch = resnet 
@@ -333,4 +334,7 @@ INCORRECT Dog Breed Assignment:
 Real:                     beagle   Classifier:                         beagle
 Real:             great pyrenees   Classifier:                 great pyrenees
 Real:           golden retriever   Classifier:               golden retriever
-\n** Total Elapsed Runtime: 0:00:01
+2. end_time: 1701152769
+3. tot_time: 0
+
+** Total Elapsed Runtime: 0:0:0

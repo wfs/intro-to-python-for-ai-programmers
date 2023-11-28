@@ -1,3 +1,4 @@
+1. start_time: 1701150546
 Command Line Arguments:
      dir = uploaded_images/ 
     arch = vgg 
@@ -74,4 +75,7 @@ pct_correct_notdogs : 100.00
 INCORRECT Dog Breed Assignment:
 Real:                        dog   Classifier:                            dog
 Real:                        dog   Classifier:                            dog
-\n** Total Elapsed Runtime: 0:00:00
+2. end_time: 1701150546
+3. tot_time: 0
+
+** Total Elapsed Runtime: 0:0:0

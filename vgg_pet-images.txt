@@ -1,3 +1,4 @@
+1. start_time: 1701152775
 Command Line Arguments:
      dir = pet_images/ 
     arch = vgg 
@@ -332,4 +333,7 @@ pct_correct_notdogs : 100.00
 INCORRECT Dog Breed Assignment:
 Real:                     beagle   Classifier:                         beagle
 Real:             great pyrenees   Classifier:                 great pyrenees
-\n** Total Elapsed Runtime: 0:00:05
+2. end_time: 1701152778
+3. tot_time: 3
+
+** Total Elapsed Runtime: 0:0:3
