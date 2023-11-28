@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/get_pet_labels_hints.py
 #                                                                             
-# PROGRAMMER: 
-# DATE CREATED:                                  
+# PROGRAMMER: Andrew Wilkie
+# DATE CREATED: Fri, 24-Nov-2024                                 
 # REVISED DATE: 
 # PURPOSE: This is a *hints* file to help guide students in creating the 
 #          function get_pet_labels that creates the pet labels from the image's
@@ -44,6 +44,8 @@ def get_pet_labels(image_dir):
     """
     # Creates list of files in directory
     in_files = listdir(image_dir)
+    print("image_dir: " + str(image_dir))
+    print("in_files: " + str(in_files))
     
     # Processes each of the files to create a dictionary where the key
     # is the filename and the value is the picture label (below).
@@ -68,7 +70,17 @@ def get_pet_labels(image_dir):
            #          accessed by in_files[idx]. Be certain to place the 
            #          extracted dog breed name in the variable pet_label 
            #          that's created as an empty string ABOVE
-           pass
+           #pass
+	              # Splits the filename by "_" to separate the words
+           words = in_files[idx].split("_")
+
+           # Loops through each word and only adds to pet_label if it is all alphabetic
+           for word in words:
+               if word.isalpha():
+                   pet_label += word + " "
+           
+           # Strips off trailing whitespace and converts to lower case
+           pet_label = pet_label.strip().lower()
 
            # If filename doesn't already exist in dictionary add it and it's
            # pet label - otherwise print an error message because indicates 
@@ -82,4 +94,5 @@ def get_pet_labels(image_dir):
  
     # TODO 2b. Replace None with the results_dic dictionary that you created
     # with this function
-    return None
+    #return None
+    return results_dic
